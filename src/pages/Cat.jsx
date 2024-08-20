@@ -28,7 +28,7 @@ function Cat() {
 
   return (
     <div>
-      {catImage ? <img src={catImage} alt="A cute cat" width={'30%'} /> : <p>Carregando...</p>}
+      {catImage ? <img src={catImage} alt="A cute cat" width={'700px'} height={'700px'}/> : <p>Carregando...</p>}
       {breedInfo && (
         <div>
           <h2>{breedInfo.name}</h2>
