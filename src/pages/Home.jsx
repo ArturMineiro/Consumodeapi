@@ -28,7 +28,7 @@ function Home() {
         <section className="mb-4">
           <h2 className="h4">API 2: CATS project</h2>
           <p>Abaixo tentei consumir uma api de trazer informações sobre gatos, </p>
-          <Link to="/Cats" className="btn btn-primary">
+          <Link to="/cat" className="btn btn-primary">
           Ver detalhes
         </Link>
         </section>
