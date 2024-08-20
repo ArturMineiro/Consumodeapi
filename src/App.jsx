@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-rou
 import Gpt from './pages/Gpt'
 import Football from './pages/Football';
 import Home from './pages/Home';
+import Cat from './pages/Cat';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/Home" element={<Home/>} />
         <Route path="/Gpt" element={<Gpt/>} />
         <Route path="/football" element={<Football/>} />
+        <Route path="/cat" element={<Cat/>} />
       </Routes> 
       </BrowserRouter>
 
