@@ -25,6 +25,14 @@ function Home() {
         </Link>
         </section>
   
+        <section className="mb-4">
+          <h2 className="h4">API 2: CATS project</h2>
+          <p>Abaixo tentei consumir uma api de trazer informações sobre gatos, </p>
+          <Link to="/Cats" className="btn btn-primary">
+          Ver detalhes
+        </Link>
+        </section>
+  
         <footer className="mt-4 pt-3 border-top text-center">
           <p>Feito por [Artur Mineiro].</p>
         </footer>
