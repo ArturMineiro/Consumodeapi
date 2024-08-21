@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
     return (
-      <div className="container my-5">
+          <div className="App bg-dark text-light">
         <header className="mb-4 text-center">
           <h1 className="display-4">Meus Consumos de APIs</h1>
           <p className="lead">Veja abaixo as informações coletadas de diferentes APIs.</p>

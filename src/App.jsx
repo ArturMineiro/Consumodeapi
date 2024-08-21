@@ -5,10 +5,12 @@ import Gpt from './pages/Gpt'
 import Football from './pages/Football';
 import Home from './pages/Home';
 import Cat from './pages/Cat';
+import Weather from './pages/Weather';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
- 
+
     <BrowserRouter> 
       <Routes>
       <Route path="/" element={<Home/>} />
@@ -16,6 +18,7 @@ function App() {
         <Route path="/Gpt" element={<Gpt/>} />
         <Route path="/football" element={<Football/>} />
         <Route path="/cat" element={<Cat/>} />
+        <Route path="/weather" element={<Weather/>} />
       </Routes> 
       </BrowserRouter>
 
