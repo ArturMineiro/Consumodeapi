@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Button from '../components/Button';
 function Football() {
     const [leagues, setLeagues] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -59,6 +59,7 @@ function Football() {
                     ))}
                 </tbody>
             </table>
+            <div>   <Button to="/">Voltar</Button></div>
         </div>
     );
 }

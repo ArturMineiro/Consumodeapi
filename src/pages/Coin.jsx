@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Button from '../components/Button';
 
 function Coin() {
   const [rates, setRates] = useState({});
@@ -54,9 +55,14 @@ function Coin() {
               </li>
             ))}
           </ul>
+          
         </div>
       )}
+
+<div>   <Button to="/">Voltar</Button></div>
     </div>
+
+    
   );
 }
 

@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Button from '../components/Button';
+ // Atualize o caminho conforme a localização do seu arquivo CSS
 
 function Cat() {
   const [catImage, setCatImage] = useState('');
@@ -39,6 +42,8 @@ function Cat() {
       )}
       {/* Botão para atualizar o gato */}
       <button onClick={fetchCatData}>Atualizar Gato</button>
+   <div>   <Button to="/">Voltar</Button></div>
+
     </div>
   );
 }
