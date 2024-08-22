@@ -31,6 +31,7 @@ function Weather() {
       let url = '';
 
       if (city) {
+        // Ajuste a URL se a cidade tiver um formato diferente
         url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pt_br`;
       } else if (lat !== null && lon !== null) {
         url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt_br`;
@@ -39,13 +40,13 @@ function Weather() {
       if (url) {
         const response = await axios.get(url);
         setWeatherData(response.data);
-        setLoading(false);
+        setError(null); // Limpar erro ao obter sucesso
       } else {
         setError('Localização não fornecida.');
-        setLoading(false);
       }
     } catch (err: any) {
       setError(err.message);
+    } finally {
       setLoading(false);
     }
   };
@@ -68,7 +69,8 @@ function Weather() {
   };
 
   const searchByCity = () => {
-    if (city) {
+    console.log('Cidade atual:', city); // Debug: Mostrar valor de city
+    if (city.trim()) { // Verifica se a cidade não está vazia
       fetchWeather(null, null, city);
     } else {
       setError('Digite o nome da cidade.');
@@ -91,7 +93,7 @@ function Weather() {
         const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
         const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=5&appid=${apiKey}`);
         
-        // Filtrar duplicatas
+        // Filtrar duplicatas e formatar sugestões
         const uniqueSuggestions = response.data.map((city: any) => `${city.name}, ${city.country}`)
           .filter((value: string, index: number, self: string[]) => self.indexOf(value) === index);
         
@@ -106,8 +108,11 @@ function Weather() {
 
   // Função para lidar com a seleção de uma sugestão
   const handleSuggestionClick = (suggestion: string) => {
-    setCity(suggestion);
+    // Divide a sugestão para extrair apenas o nome da cidade
+    const cityName = suggestion.split(',')[0];
+    setCity(cityName);
     setSuggestions([]); // Esconder as sugestões após a seleção
+    fetchWeather(null, null, cityName); // Buscar o clima para a cidade selecionada
   };
 
   return (
