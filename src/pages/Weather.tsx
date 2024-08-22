@@ -90,8 +90,12 @@ function Weather() {
       try {
         const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
         const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=5&appid=${apiKey}`);
-        const citySuggestions = response.data.map((city: any) => `${city.name}, ${city.country}`);
-        setSuggestions(citySuggestions);
+        
+        // Filtrar duplicatas
+        const uniqueSuggestions = response.data.map((city: any) => `${city.name}, ${city.country}`)
+          .filter((value: string, index: number, self: string[]) => self.indexOf(value) === index);
+        
+        setSuggestions(uniqueSuggestions);
       } catch (err) {
         console.error('Erro ao buscar sugestões de cidade:', err);
       }

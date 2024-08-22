@@ -26,7 +26,7 @@ function Home() {
         </section>
   
         <section className="mb-4">
-          <h2 className="h4">API 2: CATS project</h2>
+          <h2 className="h4">API 3: CATS project</h2>
           <p>Abaixo tentei consumir uma api de trazer informações sobre gatos, </p>
           <Link to="/cat" className="btn btn-primary">
           Ver detalhes
@@ -34,8 +34,8 @@ function Home() {
         </section>
   
         <section className="mb-4">
-          <h2 className="h4">API 2: CATS project</h2>
-          <p>Abaixo tentei consumir uma api de trazer informações sobre gatos, </p>
+          <h2 className="h4">API 4: Weather project</h2>
+          <p>Abaixo tentei consumir uma api para trazer informações sobre o clima e o tempo de alguns lugares,voce pode digitar "Rio de janeiro" e mostrará as informações de tempo no rj, além de caso ative sua localização ele pegará as informações da sua localização atual</p>
           <Link to="/cat" className="btn btn-primary">
           Ver detalhes
         </Link>
