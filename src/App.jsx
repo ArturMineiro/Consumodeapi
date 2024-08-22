@@ -6,6 +6,7 @@ import Football from './pages/Football';
 import Home from './pages/Home';
 import Cat from './pages/Cat';
 import Weather from './pages/Weather';
+import Coin from './pages/Coin';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/football" element={<Football/>} />
         <Route path="/cat" element={<Cat/>} />
         <Route path="/weather" element={<Weather/>} />
+        <Route path="/coin" element={<Coin/>} />
       </Routes> 
       </BrowserRouter>
 
