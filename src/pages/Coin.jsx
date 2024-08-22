@@ -29,7 +29,7 @@ function Coin() {
   
     return (
       <div className="container">
-        <h3>Cotações de Moedas</h3>
+        <h3>Cotações de Moedas (A conversão da erro por conta do plano contratado,porém apresenta apenas o valor do EUR em outras moedas)</h3>
         {loading ? (
           <p>Carregando...</p>
         ) : error ? (
