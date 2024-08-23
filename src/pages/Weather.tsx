@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles.css'; 
+import Button from '../components/Button';
 
 interface WeatherData {
   name: string;
@@ -88,7 +89,7 @@ function Weather() {
     const userInput = e.target.value;
     setCity(userInput);
 
-    if (userInput.length > 2) { // Buscar sugestões apenas se o usuário digitar mais de 2 caracteres
+    if (userInput.length > 3) { // Buscar sugestões apenas se o usuário digitar mais de 2 caracteres
       try {
         const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
         const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=5&appid=${apiKey}`);
@@ -153,6 +154,7 @@ function Weather() {
         </ul>
         <button className="btn btn-secondary" onClick={searchByCity}>Buscar por lugar</button>
       </div>
+      <Button to="/">Voltar</Button>
     </div>
   );
 }

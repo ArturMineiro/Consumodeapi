@@ -40,6 +40,14 @@ function Home() {
           Ver detalhes
         </Link>
         </section>
+
+        <section className="mb-4">
+          <h2 className="h4">API 5: Coin project</h2>
+          <p>Abaixo tentei consumir uma api para trazer informações sobre a cotação atual das moedas e convertelas</p>
+          <Link to="/coin" className="btn btn-primary">
+          Ver detalhes
+        </Link>
+        </section>
         <footer className="mt-4 pt-3 border-top text-center">
           <p>Feito por [Artur Mineiro].</p>
         </footer>
